@@ -3,29 +3,28 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Sahajjo;
 
-class AppServiceProvider extends ServiceProvider
+class CustomeServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        
-       
+        app()->bind('jogfol',function(){
+            return new \App\Repositories\Jogfol;
+        });
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-       
-       
+        //
     }
 }
